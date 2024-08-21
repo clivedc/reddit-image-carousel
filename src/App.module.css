@@ -1,0 +1,8 @@
+.mediaContainer {
+	width: 35rem;
+	aspect-ratio: 16 / 10;
+	border-radius: 20px;
+	overflow: hidden;
+	border: 1px solid color-mix(in srgb, var(--fg), transparent 85%);
+	max-width: min(35rem, 95%);
+}

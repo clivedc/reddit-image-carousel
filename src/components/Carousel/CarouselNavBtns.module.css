@@ -1,0 +1,33 @@
+.navBtnsContainer {
+    /* This container is grid child, so align-self can be used */
+    align-self: center;
+    /* Make it appear above the slides */
+    z-index: 1;
+
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 1em;
+
+    /* Let pointer events pass through container */
+    /* since it sits on top of the slides and could interfere with dragging */
+    pointer-events: none;
+}
+
+.prevBtn,
+.nextBtn {
+    /* Let the btns in the container retain pointer functionality */
+    pointer-events: initial;
+
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    color: var(--fg);
+    background-color: color-mix(in srgb, var(--bg), transparent 30%);
+}
+
+:is(.prevBtn, .nextBtn):disabled {
+	visibility: hidden;
+}

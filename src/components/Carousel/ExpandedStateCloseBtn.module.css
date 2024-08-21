@@ -1,0 +1,29 @@
+.closeBtn {
+	display: none;
+
+	/* This is a grid child, can use place-self */
+	place-self: start end;
+	z-index: 1;
+
+	width: 3rem;
+	height: 3rem;
+	margin: 1rem;
+	border-radius: 50%;
+	border: none;
+	cursor: pointer;
+	background-color: color-mix(in srgb, var(--bg), transparent 30%);
+}
+
+.closeBtn[data-expanded="true"] {
+	display: grid;
+	place-items: center;
+}
+
+.closeSvg {
+	width: 1.5rem;
+	height: 1.5rem;
+}
+
+.closeSvgPath {
+	fill: var(--fg);
+}

@@ -1,0 +1,35 @@
+.carouselContainer {
+    /* Used for positioning buttons and dots */
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    border-radius: 20px;
+    width: var(--carousel-width, initial);
+    aspect-ratio: 16 / 10;
+
+    display: grid;
+    grid-template-areas: "carousel-stack";
+    /* Needed to get images to be contained */
+    grid-auto-rows: 100%;
+
+    /* prevent default browser touch behaviour on carousel */
+    /* needed to make dragging work on mobile */
+    touch-action: none;
+
+	transform-origin: top left;
+}
+
+.carouselContainer > * {
+    grid-area: carousel-stack;
+}
+
+.carouselContainer[data-expanded="true"] {
+	position: fixed;
+	aspect-ratio: initial;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	border-radius: initial;
+	background-color: var(--bg);
+}

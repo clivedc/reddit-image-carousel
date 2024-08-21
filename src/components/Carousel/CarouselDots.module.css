@@ -1,0 +1,52 @@
+.carouselDotsContainer {
+    justify-self: center;
+    align-self: end;
+    margin-bottom: 1em;
+    z-index: 1;
+
+	/* Needed to position active dot indicator */
+	position: relative;
+
+    display: grid;
+    grid-auto-flow: column;
+    gap: 0.4em;
+    padding: 0.4em 0.5em;
+
+    /* Pill shape */
+    border-radius: 100rem;
+
+    background-color: color-mix(in srgb, var(--bg), transparent 30%);
+}
+
+.carouselDot, .activeDotIndicator {
+    --dot-width: 0.4rem;
+
+    /* display: block; */
+    cursor: pointer;
+
+    width: var(--dot-width);
+    height: var(--dot-width);
+
+    /* Defining like this as we're going to be animating border radius
+     along with the active dot indicator scale in js */
+    border-radius: var(--dot-width) / var(--dot-width);
+}
+
+.carouselDot {
+	background-color: color-mix(in srgb, var(--fg), transparent 70%);
+}
+
+/* .carouselDotsContainer:has(.carouselDot:focus-visible) { */
+/*     outline: var(--outln); */
+/*     outline-offset: var(--outln-offset); */
+/* } */
+
+.activeDotIndicator {
+	position: absolute;
+	background-color: var(--fg);
+	/* --slide-no defined in index.tsx */
+	grid-column: calc(var(--slide-no) + 1);
+	grid-row: 1;
+
+	pointer-events: none;
+}
